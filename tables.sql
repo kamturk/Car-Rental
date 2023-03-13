@@ -5,7 +5,6 @@ CREATE SEQUENCE office_seq START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE customer_seq START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE employees_seq START WITH 1 INCREMENT BY 1;
 
-
 CREATE TABLE car_type (
     id NUMBER(6) DEFAULT car_type_seq.NEXTVAL PRIMARY KEY,
     car_type VARCHAR2(20) NOT NULL,
@@ -55,7 +54,5 @@ CREATE TABLE reservation (
     pick_up_place_id NUMBER(6) REFERENCES office(id) NOT NULL,
     drop_off_place_id NUMBER(6) REFERENCES office(id) NOT NULL,
     pick_up_date DATE NOT NULL,
-    drop_off_date DATE NOT NULL,
-    reservation_days NUMBER(5) NOT NULL,
-    amount NUMBER(9, 2)
+    drop_off_date DATE NOT NULL
 );
