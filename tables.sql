@@ -56,3 +56,6 @@ CREATE TABLE reservation (
     pick_up_date DATE NOT NULL,
     drop_off_date DATE NOT NULL
 );
+
+ALTER TABLE employees ADD email VARCHAR2(60)
+GENERATED ALWAYS AS (LOWER(employee_name || '.' || employee_surname || '@supercars.pl'));
